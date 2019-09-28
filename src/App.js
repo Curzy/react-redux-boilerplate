@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Counter } from './Counter';
+import { MyIp } from './MyIp';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         </a>
       </header>
       <Counter />
+      <MyIp />
     </div>
   );
 }

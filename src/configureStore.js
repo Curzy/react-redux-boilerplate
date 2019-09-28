@@ -1,11 +1,13 @@
-import { createStore, combineReducers } from "redux"
-import { counterReducer } from "./reducer"
+import thunkMiddleware from 'redux-thunk'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { counterReducer, ipReducer } from './reducer'
 
 export const configureStore = () => {
   const reducer = combineReducers({
-    count: counterReducer
-  });
-  const store = createStore(reducer);
+    count: counterReducer,
+    ip: ipReducer,
+  })
+  const store = createStore(reducer, applyMiddleware(thunkMiddleware))
 
-  return store;
-};
+  return store
+}
